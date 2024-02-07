@@ -1,0 +1,12 @@
+Warning: Storing keys in a directory '/home/vscode/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed.
+Warning: No XML encryptor configured. Key {97e82c37-169c-4a20-95ea-0babdebca42d} may be persisted to storage in unencrypted form.
+Information: Now listening on: http://localhost:5126
+Information: Application started. Press Ctrl+C to shut down.
+Information: Hosting environment: Development
+Information: Content root path: /workspaces/web-authentication/out/handout
+Warning: No XML encryptor configured. Key {07a20838-ef5f-485b-9192-4c718edc2cce} may be persisted to storage in unencrypted form.
+Information: Now listening on: http://localhost:5126
+Information: Application started. Press Ctrl+C to shut down.
+Information: Hosting environment: Development
+Information: Content root path: /workspaces/handout
+Warning: Failed to determine the https port for redirect.
