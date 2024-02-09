@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/handout/App.csproj": {}
+    "/workspaces/web-authentication/App.csproj": {}
   },
   "projects": {
-    "/workspaces/handout/App.csproj": {
+    "/workspaces/web-authentication/App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/handout/App.csproj",
+        "projectUniqueName": "/workspaces/web-authentication/App.csproj",
         "projectName": "App",
-        "projectPath": "/workspaces/handout/App.csproj",
+        "projectPath": "/workspaces/web-authentication/App.csproj",
         "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/workspaces/handout/obj/",
+        "outputPath": "/workspaces/web-authentication/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/root/.nuget/NuGet/NuGet.Config"

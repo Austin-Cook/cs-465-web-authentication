@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xu2qMZV0Pv2tMNdXCxOu3HzQzR60jUQaPWVwPw7lM/ox+7+1YAq8I5UonxH3/o4Jgu98mZINYm5pV9MPedrfkQ==",
+  "dgSpecHash": "WXvzWL6YCzAAkSAfCauL1akkijLi3WGmt8PnxTZwCgytsUuyvJZP4pxeb3d9eVlgjEkI9yD09M5V9WLAqlW5og==",
   "success": true,
-  "projectFilePath": "/workspaces/handout/App.csproj",
+  "projectFilePath": "/workspaces/web-authentication/App.csproj",
   "expectedPackageFiles": [
     "/root/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/root/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
