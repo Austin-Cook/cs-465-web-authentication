@@ -24,9 +24,7 @@ internal class IterativeHasher : IPasswordHasher<IdentityUser>
         byte[] passwordBytes = Utils.StringToBytes(password);
 
         // Use a random 32-byte salt. Use a 32-byte digest.
-        Random rnd = new();
-        byte[] salt = new byte[32];
-        rnd.NextBytes(salt);
+        byte[] salt = Utils.Get32ByteSalt();
 
         // copy passwordBytes and salt into the digest
         byte[] digest = Utils.CombineByteArrays(salt, passwordBytes);
@@ -37,10 +35,7 @@ internal class IterativeHasher : IPasswordHasher<IdentityUser>
         }
 
         // Encode as "Base64(salt):Base64(digest)"
-        string saltAndDigest = Utils.EncodeSaltAndDigest(salt, digest);
-        Console.WriteLine("Hashed a new password:");
-        Console.WriteLine(saltAndDigest);
-        return saltAndDigest;
+        return Utils.EncodeSaltAndDigest(salt, digest);
     }
 
     /// <summary>
@@ -55,8 +50,6 @@ internal class IterativeHasher : IPasswordHasher<IdentityUser>
 
         // compute hash of providedPassword
         byte[] providedPasswordBytes = Utils.StringToBytes(providedPassword);
-
-        // byte[] actualDigest = SHA256.HashData(saltedProvidedPasswordByes);
         byte[] actualDigest = Utils.CombineByteArrays(salt, providedPasswordBytes);
         for (int i = 0; i < numIterations; i++)
         {
@@ -67,9 +60,6 @@ internal class IterativeHasher : IPasswordHasher<IdentityUser>
         {
             return PasswordVerificationResult.Success;
         }
-        Console.WriteLine("Verify(failed) actual computed digest:");
-        Console.WriteLine(Convert.ToBase64String(actualDigest));
-
         return PasswordVerificationResult.Failed;
     }
 }

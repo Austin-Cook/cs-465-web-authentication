@@ -45,6 +45,14 @@ internal static class Utils
         return (saltBytes, digestBytes);
     }
 
+    public static byte[] Get32ByteSalt() {
+        Random rnd = new();
+        byte[] salt = new byte[32];
+        rnd.NextBytes(salt);
+
+        return salt;
+    }
+
     public static byte[] StringToBytes(string value)
     {
         return Encoding.UTF8.GetBytes(value);
