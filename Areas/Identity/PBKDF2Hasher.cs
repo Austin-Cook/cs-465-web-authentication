@@ -31,8 +31,7 @@ internal class PBKDF2Hasher : IPasswordHasher<IdentityUser>
 
         // Encode as "Base64(salt):Base64(digest)"
         string saltAndDigest = Utils.EncodeSaltAndDigest(salt, digest);
-        Console.WriteLine("Hashed a new password:");
-        Console.WriteLine(saltAndDigest);
+
         return saltAndDigest;
     }
 

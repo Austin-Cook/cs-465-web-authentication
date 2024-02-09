@@ -63,10 +63,6 @@ internal class Argon2idHasher : IPasswordHasher<IdentityUser>
         };
         byte[] actualDigest = argon2.GetBytes(32);
 
-        Console.WriteLine("salt: " + Convert.ToBase64String(salt));
-        Console.WriteLine("expected password hash: " + Convert.ToBase64String(expectedDigest));
-        Console.WriteLine("actual password hash: " + Convert.ToBase64String(actualDigest));
-
         if (expectedDigest.SequenceEqual(actualDigest))
         {
             return PasswordVerificationResult.Success;
