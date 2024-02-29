@@ -27,9 +27,11 @@ internal class IterativeHasher : IPasswordHasher<IdentityUser>
         byte[] salt = Utils.Get32ByteSalt();
 
         // copy passwordBytes and salt into the digest
-        byte[] digest = Utils.CombineByteArrays(salt, passwordBytes);
+        byte[] saltAndPasswordBytes = Utils.CombineByteArrays(salt, passwordBytes);
+
         // 100,000 iterations and the SHA256 algorithm.
-        for (int i = 0; i < numIterations; i++)
+        byte[] digest = SHA256.HashData(saltAndPasswordBytes);
+        for (int i = 0; i < numIterations - 1; i++)
         {
             digest = SHA256.HashData(digest);
         }
@@ -50,8 +52,13 @@ internal class IterativeHasher : IPasswordHasher<IdentityUser>
 
         // compute hash of providedPassword
         byte[] providedPasswordBytes = Utils.StringToBytes(providedPassword);
-        byte[] actualDigest = Utils.CombineByteArrays(salt, providedPasswordBytes);
-        for (int i = 0; i < numIterations; i++)
+
+        // copy passwordBytes and salt into the digest
+        byte[] saltAndProvidedPasswordBytes = Utils.CombineByteArrays(salt, providedPasswordBytes);
+
+        // 100,000 iterations and the SHA256 algorithm
+        byte[] actualDigest = SHA256.HashData(saltAndProvidedPasswordBytes);
+        for (int i = 0; i < numIterations - 1; i++)
         {
             actualDigest = SHA256.HashData(actualDigest);
         }
